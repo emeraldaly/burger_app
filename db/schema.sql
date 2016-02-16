@@ -1,3 +1,5 @@
+### Schema
+
 CREATE DATABASE burger_app_db;
 USE burger_app_db;
 
