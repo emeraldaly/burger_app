@@ -17,8 +17,6 @@ app.engine('handlebars', exphbs({
   }));
 app.set('view engine', 'handlebars');
 
-var routes = require('./controllers/things_controller.js');
-app.use('/', routes);
-
 app.listen(PORT, function() {
     console.log("listening on port %s", PORT);
+});
