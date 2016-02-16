@@ -1,0 +1,13 @@
+  <h1>Buger App</h1>
+<div>  
+  {{#each data}}
+    {{#if this.thing_state}}
+    <pre>{{this.thing_name}}</pre>
+  {{/if}}
+  {{/each}}
+</div>
+
+<form action="/create" method="POST">
+  <textarea class="form-control" type="text" name="burger" value=""></textarea>
+  <button type="submit">Submit</button>
+</form>
