@@ -1,7 +1,7 @@
 var connection = require('./connection.js');
 
 var orm = {
-  showBurgers: fuunction(table, cb){
+  showBurgers: function(table, cb){
     var s = 'SELECT * FROM ' + table;
     connection.query(s, function(err, result){
       if(err){ throw err }
