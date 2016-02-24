@@ -3,8 +3,10 @@ var router = express.Router();
 var burger = require('../models/burger.js');
 
 router.get('/', function(req, res){
+  console.log(res);
   burger.showMeTheBurgers(function(data) {
-    res.render('burgersindex');
+    console.log(data);
+    res.render('other');
   });
 });
 
@@ -14,5 +16,5 @@ router.post('/add-burger', function(req, res) {
     res.redirect('/');
   });
 });
-
+console.log(router);
 module.exports = router;

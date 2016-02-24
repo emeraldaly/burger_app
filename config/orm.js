@@ -5,7 +5,7 @@ var orm = {
     var s = 'SELECT * FROM ' + table;
     connection.query(s, function(err, result){
       if(err){ throw err }
-        cb(res);
+        cb(result);
     });
   },
   addBurger: function(table, burger, cb) {
