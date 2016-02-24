@@ -10,3 +10,5 @@ connection.connect(function(err) {
 });
 
 module.exports = connection;
+//options.host || 'localhost';
+//connection;
