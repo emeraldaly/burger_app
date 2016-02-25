@@ -2,25 +2,29 @@ var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger.js');
 
+
 router.get('/', function(req, res){
-  console.log(res);
-  burger.showMeTheBurgers(function(data) {
-    console.log(data);
-    res.render('other', {burger_data});
+  // console.log(res);
+  burger.showBurgers(function(data) {
+    // console.log(data);
+    res.render('other', {data});
   });
 });
 
-router.post('/add-burger', function(req, res) {
-  burger.addTheBurger(req.body.entry, function(res) {
-    console.log('Burger added to table');
+router.post('/create', function(req, res) {
+  console.log(req.body);
+  burger.addBurger(req.body.burger, function(result) {
+    //console.log(res.redirect);
     res.redirect('/');
   });
 });
 
 router.put('/update', function(req, res) {
-  burger.devouredBurger(req.body.burger, function(res) {
+  console.log(req.body.burgerId);
+  burger.devouredBurger(req.body.burgerId, function(result) {
     res.redirect('/');
   });
 });
-console.log(router);
+
+// console.log(router);
 module.exports = router;

@@ -12,16 +12,19 @@ var orm = {
     var s = 'INSERT INTO ' + table + '(burger_name, devoured) VALUES (?,?);';
     connection.query(s, [burger, 0], function(err, result, fields) {
       if (err) throw err;
+      debugger;
       cb(result);
     });
   },
-  devouredBurger: function(table, burger, cb) { 
-      var s = 'UPDATE ' + tableInput + ' SET devoured = 1';
-      connection.query(s, [burger, 1], function(err, result) {
+  devouredBurger: function(table, burgerId, cb) { 
+      var s = 'UPDATE ' + table + ' SET devoured = 1 WHERE id = ?';
+      console.log(s);
+      console.log(burgerId);
+      connection.query(s, [burgerId], function(err, result) {
       if (err) throw err;
       cb(result);
     });
-    },
+  }
     
 };
 

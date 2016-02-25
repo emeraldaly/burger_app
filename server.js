@@ -21,7 +21,7 @@ app.set('view engine', 'handlebars');
 
 var controller = require('./controllers/burgers_controllers.js');
 app.use('/', controller);
-app.use('/add-burger', controller);
+app.use('/create', controller);
 app.use('/update', controller);
 
 app.listen(PORT, function() {
