@@ -1,13 +1,28 @@
-  <h1>Burger App</h1>
-<div>  
-  {{#each data}}
-    {{#if this.thing_state}}
-    <pre>{{this.thing_name}}</pre>
-  {{/if}}
-  {{/each}}
-</div>
-
-<form action="/create" method="POST">
-  <textarea class="form-control" type="text" name="burger" value=""></textarea>
-  <button type="submit">Submit</button>
-</form>
+<div class="container"> 
+  <div class="row">
+    <div class="col-xs-12"> 
+      <h1>Burger App</h1>
+    </div>  
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <img src="../../public/images/burger.png" alt="burger">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+        {{#each data}}
+       {{#if this.thing_state}}
+        <pre>{{this.thing_name}}</pre>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <form action="/create" method="POST">
+      <textarea class="form-control" type="text" name="burger" value=""></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div> 
+ 

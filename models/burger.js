@@ -8,7 +8,10 @@ var burger = {
   },
   addTheBurger: function(burgerName, cb){
     orm.addBurger('burgers', burgerName, cb);
-  }
-}
+  },
+  devouredBurger: function(burgerName, cb) {
+    orm.devouredBurger(burgerName, cb);
+    }
+  };
 
 module.exports=burger;
