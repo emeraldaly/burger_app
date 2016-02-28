@@ -5,39 +5,39 @@
     </div>  
   </div>
   <div class="row">
-    <div class="col-xs-12">
-      <img src="../../static/images/burger.png" alt="burger">
+    <div class="col-sm-offset-4 col-xs-4">
+      <img src="/images/burger.png" alt="burger">
     </div>
   </div>
   <div class="row">
     <div class="col-xs-4">
-      
-      
-    {{#each data}}  
-      {{#unless this.devoured}}
+    <h3>Burgers to Eat</h3>      
+      {{#each data}}  
+        {{#unless this.devoured}}
           <form action="/update?_method=PUT" method="POST">   
             <pre>{{this.burger_name}}</pre>
             <input type="hidden" value={{this.id}} name="burgerId" type="text">
             <button type="submit">Devour It</button>
           </form>
-      {{/unless}}
-    {{/each}}
-      
-      
+        {{/unless}}
+      {{/each}}
     </div>
-  </div>
     <div class="col-xs-4">
+    <h3>Line up your burger</h3>
       <form action="/create" method="POST">
         <textarea class="form-control" type="text" name="burger" value=""></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>
     <div class="col-xs-4">
+    <h3>Devoured Burgers</h3>
       {{#each data}} 
         {{#if this.devoured}}
         <pre>{{this.burger_name}}</pre>
         {{/if}}
       {{/each}}
-  </div>
-</div> 
+    </div>
+  </div> 
+</div>
+
  
